@@ -1,6 +1,6 @@
 NAME = push_swap
 
-SOURCES = data_parsing.c main.c
+SOURCES = data_parsing.c movement.c makeStack_utiles.c main.c
 # BONUS_SOURCES = 
 		
 OBJECTS = $(SOURCES:.c=.o)
@@ -9,7 +9,7 @@ OBJECTS = $(SOURCES:.c=.o)
 LIB = libft/libft.a
 
 CC = gcc
-CFLAGS += -Wextra -Werror -Wall  -I ./libft #-g3 -fsanitize=address
+CFLAGS += -Wextra -Werror -Wall  -I ./libft -g3 -fsanitize=address
  
 all: $(NAME) 
 
