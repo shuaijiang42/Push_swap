@@ -6,7 +6,7 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 17:22:59 by shujiang          #+#    #+#             */
-/*   Updated: 2023/06/01 16:42:29 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/06/16 12:42:05 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void    rotate(t_node **stack, char c)
     t_node  *last;
     
     temp = NULL;
-    if (!stack || !*stack)
+    if (!stack || !*stack || !(*stack)->next)
         return ;
     temp = (*stack)->next;
     last = ft_lstNode(*stack);
@@ -66,11 +66,25 @@ void    rotate(t_node **stack, char c)
     ft_printf("r%c\n", c);
 }
 
+void    rotate_no_print(t_node **stack)
+{
+    t_node  *temp;
+    t_node  *last;
+    
+    temp = NULL;
+    if (!stack || !*stack)
+        return ;
+    temp = (*stack)->next;
+    last = ft_lstNode(*stack);
+    (*stack)->next = NULL;
+    ft_nodeAdd_back(&last, *stack);
+    *stack = temp;
+}
 //shift two stacks at the same time.
 void    double_rotate(t_node **stack_a, t_node **stack_b)
 {
-    rotate(stack_a, 'a');
-    rotate(stack_b, 'b');
+    rotate_no_print(stack_a);
+    rotate_no_print(stack_b);
     ft_printf("rr\n");
 }
 
