@@ -6,7 +6,7 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 18:35:06 by shujiang          #+#    #+#             */
-/*   Updated: 2023/06/16 19:06:28 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/06/17 12:07:06 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,13 @@ typedef struct s_node
 	int	index;
 	struct s_node	*next;
 }	t_node;
+
+typedef struct s_range
+{
+	int	max;
+	int half;
+	int	min;
+}	t_range;
 
 //parsing
 long	ft_atol_check_int_range(const char *str);

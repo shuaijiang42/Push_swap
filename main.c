@@ -6,7 +6,7 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 18:32:06 by shujiang          #+#    #+#             */
-/*   Updated: 2023/06/16 19:05:08 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/06/17 15:44:03 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int main(int argc, char **argv)
     }
     else if (stack_size(stack_a) == 500)
     {
-        chunk_a_to_b(&stack_a, &stack_b, 15);
+        chunk_a_to_b(&stack_a, &stack_b, 19);
         chunk_b_to_a(&stack_a, &stack_b, 499);
     }
     return(0);  
