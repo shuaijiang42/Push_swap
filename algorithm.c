@@ -6,7 +6,7 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:31:28 by shujiang          #+#    #+#             */
-/*   Updated: 2023/06/21 17:34:52 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/06/21 21:42:47 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -217,7 +217,13 @@ t_range *iniciate_range(t_node *stack, int chunk_size, int k)
 	t_range *range;
 	
 	range = (t_range *)malloc(3 * sizeof(int));
-	if (k != 1)
+	if (k == -1)
+	{	
+		range->max = 2;
+		range->half = 0;
+		range->min = 0;
+	}	
+	else if (k != 1)
 	{
 		range->min = k * chunk_size;
 		range->half = (k + 1) * chunk_size;

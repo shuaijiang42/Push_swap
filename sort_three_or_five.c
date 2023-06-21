@@ -6,7 +6,7 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 19:00:20 by shujiang          #+#    #+#             */
-/*   Updated: 2023/06/16 19:08:08 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/06/21 21:47:29 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,19 +42,18 @@ void	sort_three(t_node **stack)
 }
 void	sort_five(t_node **stack_a, t_node **stack_b)
 {
-	t_node *temp;
-
-	temp = *stack_a;
-	while (temp)
+	t_range *range;
+	t_target *target;
+	int counter; 
+	
+	counter = 0;
+	range = iniciate_range(*stack_a, 0, -1);
+	while (counter <2)
 	{
-		if (temp->pos == 0 || temp->pos == 1)
-		{
-			move_to_top(stack_a, temp, 'a');
-			push(stack_a, stack_b, 'b');
-			temp = *stack_a;			
-		}
-		else
-			temp = temp->next;
+		target = get_target(stack_a, range);
+		go_top(target, stack_a, 'a');
+		push(stack_a, stack_b, 'b');
+		counter++;
 	}
 	sort_three(stack_a);
 	push(stack_b, stack_a, 'a');

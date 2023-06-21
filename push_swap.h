@@ -6,7 +6,7 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 18:35:06 by shujiang          #+#    #+#             */
-/*   Updated: 2023/06/20 14:15:19 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/06/21 21:48:42 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,11 @@ int		stack_size(t_node *stack);
 //void	move_to_top(t_node **stack, t_node *node, char c);
 //void	chunk_b_to_a(t_node **stack_a, t_node **stack_b, int max_pos);
 void    sort_three_or_five(t_node **stack_a, t_node **stack_b);
-void 	move_to_top(t_node **stack, t_range *range, char c);
+
 void	chunk_a_to_b(t_node **stack_a, t_node **stack_b, int n_chunks);
 void	chunk_b_to_a(t_node **stack_a, t_node **stack_b);
 void 	printstack(t_node *node);
+t_range *iniciate_range(t_node *stack, int chunk_size, int k);
+t_target	*get_target(t_node **stack, t_range *range);
+void	go_top (t_target *target, t_node **stack, char c);
 #endif

@@ -1,6 +1,6 @@
 NAME = push_swap
 
-SOURCES = data_parsing.c movement.c makeStack_utiles.c algorithm.c main.c #sort_three_or_five.c
+SOURCES = data_parsing.c movement.c makeStack_utiles.c algorithm.c main.c sort_three_or_five.c
 # BONUS_SOURCES = 
 		
 OBJECTS = $(SOURCES:.c=.o)
