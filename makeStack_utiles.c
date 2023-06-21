@@ -6,7 +6,7 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 12:51:33 by shujiang          #+#    #+#             */
-/*   Updated: 2023/06/01 12:52:48 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/06/17 15:56:51 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ t_node	*ft_newNode(int data)
 		return(NULL);
 	node->data = data;
 	node->next = NULL;
+	node->prev = NULL;
 	return(node);
 }
 
@@ -48,6 +49,7 @@ void	ft_nodeAdd_back(t_node **stack, t_node *new)
 		node = *stack;
 		node = ft_lstNode(node);
 		node->next = new;
+		new->prev = node;
 	}
 	else
 		*stack = new; 

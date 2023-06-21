@@ -6,7 +6,7 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 18:35:06 by shujiang          #+#    #+#             */
-/*   Updated: 2023/06/17 12:07:06 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/06/20 14:15:19 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_node
 	int pos;
 	int	index;
 	struct s_node	*next;
+	struct s_node	*prev;
 }	t_node;
 
 typedef struct s_range
@@ -33,6 +34,13 @@ typedef struct s_range
 	int half;
 	int	min;
 }	t_range;
+
+typedef struct s_target
+{
+	int	steps;
+	int dir;
+	struct s_node *node;
+}	t_target;
 
 //parsing
 long	ft_atol_check_int_range(const char *str);
@@ -59,8 +67,12 @@ void    double_reverse_rotate(t_node **stack_a, t_node **stack_b);
 void    find_position(t_node **stack);
 void	assign_index(t_node **stack);
 int		stack_size(t_node *stack);
-void	chunk_a_to_b(t_node **stack_a, t_node **stack_b, int n_chunks);
-void	move_to_top(t_node **stack, t_node *node, char c);
-void	chunk_b_to_a(t_node **stack_a, t_node **stack_b, int max_pos);
+//void	chunk_a_to_b(t_node **stack_a, t_node **stack_b, int n_chunks);
+//void	move_to_top(t_node **stack, t_node *node, char c);
+//void	chunk_b_to_a(t_node **stack_a, t_node **stack_b, int max_pos);
 void    sort_three_or_five(t_node **stack_a, t_node **stack_b);
+void 	move_to_top(t_node **stack, t_range *range, char c);
+void	chunk_a_to_b(t_node **stack_a, t_node **stack_b, int n_chunks);
+void	chunk_b_to_a(t_node **stack_a, t_node **stack_b);
+void 	printstack(t_node *node);
 #endif
