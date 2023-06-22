@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   makeStack_utiles.c                                 :+:      :+:    :+:   */
+/*   stack_utiles.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 12:51:33 by shujiang          #+#    #+#             */
-/*   Updated: 2023/06/17 15:56:51 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/06/22 14:47:04 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,17 @@ void	ft_nodeAdd_back(t_node **stack, t_node *new)
 	}
 	else
 		*stack = new; 
+}
+
+int	stack_size(t_node *stack)
+{
+	int	size;
+	
+	size = 0;
+	while(stack)
+	{
+		stack = stack->next;
+		size += 1;
+	}
+	return (size);
 }

@@ -6,7 +6,7 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 18:35:06 by shujiang          #+#    #+#             */
-/*   Updated: 2023/06/22 13:02:59 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/06/22 14:41:49 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ char    ***orgnize_input(int argc, char **argv);
 void	check_data(char ***data_list);
 t_node	*input_to_stack(char ***data_list);
 void	check_repeat(t_node *stack);
+t_node	*build_stack_a(int argc, char **argv);
 
 //stack building
 t_node	*ft_newNode(int data);
