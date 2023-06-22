@@ -6,7 +6,7 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 18:35:06 by shujiang          #+#    #+#             */
-/*   Updated: 2023/06/21 21:48:42 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/06/22 13:02:59 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ typedef struct s_node
 {
 	int	data;
 	int pos;
-	int	index;
 	struct s_node	*next;
 	struct s_node	*prev;
 }	t_node;
@@ -65,11 +64,7 @@ void    reverse_rotate(t_node **stack, char c);
 void    double_reverse_rotate(t_node **stack_a, t_node **stack_b);
 
 void    find_position(t_node **stack);
-void	assign_index(t_node **stack);
 int		stack_size(t_node *stack);
-//void	chunk_a_to_b(t_node **stack_a, t_node **stack_b, int n_chunks);
-//void	move_to_top(t_node **stack, t_node *node, char c);
-//void	chunk_b_to_a(t_node **stack_a, t_node **stack_b, int max_pos);
 void    sort_three_or_five(t_node **stack_a, t_node **stack_b);
 
 void	chunk_a_to_b(t_node **stack_a, t_node **stack_b, int n_chunks);
