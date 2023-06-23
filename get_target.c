@@ -6,19 +6,19 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 13:05:49 by shujiang          #+#    #+#             */
-/*   Updated: 2023/06/23 16:25:48 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/06/23 19:43:46 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_range *iniciate_range(t_node *stack, int chunk_size, int k)
+t_range	*iniciate_range(t_node *stack, int chunk_size, int k)
 {
-	t_range *range;
-	
-	range = (t_range *)malloc(3 * sizeof(int));
+	t_range	*range;
+
+	range = (t_range *)malloc(sizeof(t_range));
 	if (k == -1)
-	{	
+	{
 		range->max = 2;
 		range->half = 0;
 		range->min = 0;
@@ -30,7 +30,7 @@ t_range *iniciate_range(t_node *stack, int chunk_size, int k)
 		range->max = (k + 2) * chunk_size;
 	}
 	else
-	{	
+	{
 		range->max = stack_size(stack);
 		range->half = 0;
 		range->min = stack_size(stack) - 2;
@@ -41,12 +41,12 @@ t_range *iniciate_range(t_node *stack, int chunk_size, int k)
 t_target	*count_steps(t_node **stack, t_range *range)
 {
 	t_target	*target;
-	t_node	*temp;
-	int		counter;
-	
+	t_node		*temp;
+	int			counter;
+
 	counter = 0;
 	temp = *stack;
-	target = malloc(sizeof(t_target));
+	target = (t_target *)malloc(sizeof(t_target));
 	while (temp)
 	{
 		if (temp->pos >= range->min && temp->pos < range->max)
@@ -63,12 +63,12 @@ t_target	*count_steps(t_node **stack, t_range *range)
 t_target	*count_steps_back(t_node **stack, t_range *range)
 {
 	t_target	*target;
-	t_node	*temp;
-	int		counter;
-	
+	t_node		*temp;
+	int			counter;
+
 	counter = 1;
 	temp = ft_lstNode(*stack);
-	target = malloc(2*sizeof(int)+sizeof(t_node));
+	target = (t_target *)malloc(sizeof(t_target));
 	while (temp)
 	{
 		if (temp->pos >= range->min && temp->pos < range->max)
@@ -84,21 +84,19 @@ t_target	*count_steps_back(t_node **stack, t_range *range)
 
 t_target	*get_target(t_node **stack, t_range *range)
 {
-	t_target *target_top;
-	t_target *target_bottom;
+	t_target	*target_top;
+	t_target	*target_bottom;
 
 	target_top = count_steps(stack, range);
 	target_bottom = count_steps_back(stack, range);
 	if (target_top->steps <= target_bottom->steps)
 	{
 		free(target_bottom);
-		return(target_top);
+		return (target_top);
 	}
 	else
 	{
 		free(target_top);
-		return(target_bottom);
+		return (target_bottom);
 	}	
-	
-		
 }

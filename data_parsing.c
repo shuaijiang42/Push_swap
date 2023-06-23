@@ -6,18 +6,19 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 21:03:54 by shujiang          #+#    #+#             */
-/*   Updated: 2023/06/23 17:17:49 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/06/23 19:35:05 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//Data cleaning, make sure it is a number less than 10 digit (digits of INT_MAX).
+//Data cleaning, make sure it is a number 
+//less than 10 digit (digits of INT_MAX).
 void	lenth_and_digit_check(const char *str)
 {
 	size_t	i;
-	size_t n;
-	
+	size_t	n;
+
 	i = 0;
 	if (str[i] != '-' && str[i] != '+' )
 		n = 10;
@@ -39,7 +40,7 @@ void	lenth_and_digit_check(const char *str)
 		exit(1);
 	}
 }
-								
+
 //turn a string into long and check if it is inside the range of int
 long	ft_atol_check_int_range(const char *str)
 {
@@ -70,34 +71,34 @@ long	ft_atol_check_int_range(const char *str)
 
 //check if all the datas on the list are legal. looking through all the datas
 //if there is any ilegal one, report Error and exit.
-void check_data(char ***data_list)
+void	check_data(char ***data_list)
 {
-	int i;
-    int j;
+	int	i;
+	int	j;
 
-    i = 0;
-    j = 0;
-	if(!data_list)
+	i = 0;
+	j = 0;
+	if (!data_list)
 	{
-        write(2, "Error\n", 7);
-	    exit(1);
-    }	
-	while(data_list[i])
-    {
-    	while(data_list[i][j])
-    	{
+		write(2, "Error\n", 7);
+		exit(1);
+	}	
+	while (data_list[i])
+	{
+		while (data_list[i][j])
+		{
 			ft_atol_check_int_range(data_list[i][j]);
-        	j++;
-    	}
-    	i++;
-    	j = 0; 
-    }
+			j++;
+		}
+		i++;
+		j = 0;
+	}
 }
 
 void	check_repeat(t_node *stack)
 {
-	t_node *temp;
-	
+	t_node	*temp;
+
 	while (stack)
 	{
 		temp = stack->next;
@@ -114,4 +115,3 @@ void	check_repeat(t_node *stack)
 		stack = stack->next;
 	}
 }
-	

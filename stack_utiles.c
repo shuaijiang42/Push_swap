@@ -6,28 +6,28 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 12:51:33 by shujiang          #+#    #+#             */
-/*   Updated: 2023/06/22 14:47:04 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/06/23 20:12:50 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 //creat a new node
-t_node	*ft_newNode(int data)
+t_node	*ft_new_node(int data)
 {
-	t_node *node;
-	
+	t_node	*node;
+
 	node = malloc(sizeof(t_node));
 	if (!node)
-		return(NULL);
+		return (NULL);
 	node->data = data;
 	node->next = NULL;
 	node->prev = NULL;
-	return(node);
+	return (node);
 }
 
 //go to the bottom of the stack
-t_node	*ft_lstNode(t_node *stack)
+t_node	*ft_lst_node(t_node *stack)
 {
 	if (!stack)
 		return (NULL);
@@ -39,12 +39,13 @@ t_node	*ft_lstNode(t_node *stack)
 	}
 	return (stack);
 }
+
 //add data to the bottom of the stack
-void	ft_nodeAdd_back(t_node **stack, t_node *new)
+void	ft_node_add_back(t_node **stack, t_node *new)
 {
 	t_node	*node;
-	
-	if(stack && *stack)
+
+	if (stack && *stack)
 	{
 		node = *stack;
 		node = ft_lstNode(node);
@@ -52,15 +53,15 @@ void	ft_nodeAdd_back(t_node **stack, t_node *new)
 		new->prev = node;
 	}
 	else
-		*stack = new; 
+		*stack = new;
 }
 
 int	stack_size(t_node *stack)
 {
 	int	size;
-	
+
 	size = 0;
-	while(stack)
+	while (stack)
 	{
 		stack = stack->next;
 		size += 1;
