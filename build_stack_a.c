@@ -6,7 +6,7 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 13:54:27 by shujiang          #+#    #+#             */
-/*   Updated: 2023/06/22 14:40:01 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/06/23 17:17:24 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ char ***creat_input_list(char **argv, char ***input_list)
 			j++;
 		if (j == (int)ft_strlen(argv[i]))
 		{
-			write(2, "Error\n", 7);
-			exit(1);
+			exit(0);
 		}
         input_list[i - 1] = ft_split(argv[i], ' ');
         i++;
@@ -76,8 +75,9 @@ t_node	*input_to_stack(char ***data_list)
         	j++;
     	}
     	i++;
-    	j = 0; 
+    	j = 0;
     }
+	free_input_list(data_list);
 	return(stack);
 }
 

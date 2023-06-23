@@ -6,13 +6,13 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 15:38:06 by shujiang          #+#    #+#             */
-/*   Updated: 2023/02/09 16:03:21 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/06/23 13:34:22 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+/* void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	void	*ptr;
 
@@ -27,4 +27,4 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		n--;
 	}
 	return (ptr);
-}
+} */

@@ -6,7 +6,7 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:10:14 by shujiang          #+#    #+#             */
-/*   Updated: 2023/05/22 15:49:37 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/06/23 15:09:52 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static char	*write_substrings(const char *s, char c)
 	return (substr);
 }
 
-static void	*ft_free_strings(char	**strings)
+void	*ft_free_strings(char	**strings)
 {
 	int	i;
 

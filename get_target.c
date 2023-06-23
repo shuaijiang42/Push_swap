@@ -6,7 +6,7 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 13:05:49 by shujiang          #+#    #+#             */
-/*   Updated: 2023/06/22 14:45:31 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/06/23 16:25:48 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ t_target	*count_steps(t_node **stack, t_range *range)
 	
 	counter = 0;
 	temp = *stack;
-	target = malloc(2*sizeof(int)+sizeof(t_node));
+	target = malloc(sizeof(t_target));
 	while (temp)
 	{
 		if (temp->pos >= range->min && temp->pos < range->max)
@@ -90,7 +90,15 @@ t_target	*get_target(t_node **stack, t_range *range)
 	target_top = count_steps(stack, range);
 	target_bottom = count_steps_back(stack, range);
 	if (target_top->steps <= target_bottom->steps)
+	{
+		free(target_bottom);
 		return(target_top);
+	}
 	else
+	{
+		free(target_top);
 		return(target_bottom);
+	}	
+	
+		
 }

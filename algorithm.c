@@ -6,7 +6,7 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:31:28 by shujiang          #+#    #+#             */
-/*   Updated: 2023/06/22 14:46:59 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/06/23 16:27:41 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	push_target_b(t_node **stack_a, t_node **stack_b, t_range *range)
 	target = get_target(stack_a, range);
 	go_top(target, stack_a, 'a');
 	push(stack_a, stack_b, 'b');
+	free(target);
 	if ((*stack_b)->pos < range->half && (*stack_b)->next && (*stack_b)->next->pos >= range->half)
 	{
 		target = get_target(stack_a, range);
@@ -48,7 +49,9 @@ void	push_target_b(t_node **stack_a, t_node **stack_b, t_range *range)
 			double_rotate(stack_a, stack_b);
 		else
 			rotate(stack_b, 'b');
+		free(target);
 	}
+	
 }
 
 void	push_target_a(t_node **stack_a, t_node **stack_b, t_range *range)
@@ -60,6 +63,7 @@ void	push_target_a(t_node **stack_a, t_node **stack_b, t_range *range)
 	push(stack_b, stack_a, 'a');
 	if (*stack_a && (*stack_a)->next && (*stack_a)->pos > (*stack_a)->next->pos)
 		swap(stack_a, 'a');
+	free(target);
 }
 
 void	chunk_a_to_b(t_node **stack_a, t_node **stack_b, int n_chunks)
@@ -80,6 +84,7 @@ void	chunk_a_to_b(t_node **stack_a, t_node **stack_b, int n_chunks)
 			push_target_b(stack_a, stack_b, range);
 			counter++;
 		}
+		free(range);
 		k += 2;
 	}
 }
@@ -97,6 +102,7 @@ void	chunk_b_to_a(t_node **stack_a, t_node **stack_b)
 		{
 			push_target_a(stack_a, stack_b, range);
 			counter++;
-		}	
+		}
+		free(range);	
 	}
 }

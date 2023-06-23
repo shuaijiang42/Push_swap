@@ -6,7 +6,7 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 18:35:06 by shujiang          #+#    #+#             */
-/*   Updated: 2023/06/22 14:41:49 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/06/23 18:24:49 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,11 @@ typedef struct s_target
 long	ft_atol_check_int_range(const char *str);
 void	lenth_and_digit_check(const char *str);
 char    ***orgnize_input(int argc, char **argv);
-void	check_data(char ***data_list);
+void check_data(char ***data_list);
 t_node	*input_to_stack(char ***data_list);
 void	check_repeat(t_node *stack);
 t_node	*build_stack_a(int argc, char **argv);
-
+int if_sorted(t_node *stack_a);
 //stack building
 t_node	*ft_newNode(int data);
 t_node	*ft_lstNode(t_node *stack);
@@ -66,7 +66,7 @@ void    double_reverse_rotate(t_node **stack_a, t_node **stack_b);
 
 void    find_position(t_node **stack);
 int		stack_size(t_node *stack);
-void    sort_three_or_five(t_node **stack_a, t_node **stack_b);
+void sort_until_five(t_node **stack_a, t_node **stack_b);
 
 void	chunk_a_to_b(t_node **stack_a, t_node **stack_b, int n_chunks);
 void	chunk_b_to_a(t_node **stack_a, t_node **stack_b);
@@ -74,4 +74,9 @@ void 	printstack(t_node *node);
 t_range *iniciate_range(t_node *stack, int chunk_size, int k);
 t_target	*get_target(t_node **stack, t_range *range);
 void	go_top (t_target *target, t_node **stack, char c);
+
+void    free_stack(t_node **stack);
+void	free_input_list(char ***input_list);
+void	*ft_free_strings(char	**strings);
+
 #endif
