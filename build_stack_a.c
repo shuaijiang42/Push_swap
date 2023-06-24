@@ -6,7 +6,7 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 13:54:27 by shujiang          #+#    #+#             */
-/*   Updated: 2023/06/24 10:39:38 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/06/24 19:03:57 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	***orgnize_input(int argc, char **argv)
 		return (NULL);
 	if (!argv[1])
 	{
-		write(2, "Error\n", 7);
+		write(2, "Error\n", 6);
 		exit(1);
 	}
 	input_list = creat_input_list(argv, input_list);

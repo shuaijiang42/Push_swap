@@ -6,7 +6,7 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 21:03:54 by shujiang          #+#    #+#             */
-/*   Updated: 2023/06/23 19:35:05 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/06/24 19:04:15 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ void	lenth_and_digit_check(const char *str)
 	}
 	if (ft_strlen(str) > n)
 	{
-		write(2, "Error\n", 7);
+		write(2, "Error\n", 6);
 		exit(1);
 	}
 	while (str[i] >= 48 && str[i] <= 57 && str[i])
 		i++;
 	if (i != ft_strlen(str))
 	{
-		write(2, "Error\n", 7);
+		write(2, "Error\n", 6);
 		exit(1);
 	}
 }
@@ -65,7 +65,7 @@ long	ft_atol_check_int_range(const char *str)
 	result = sign * temp;
 	if (result <= INT_MAX && result >= INT_MIN)
 		return (result);
-	write(2, "Error\n", 7);
+	write(2, "Error\n", 6);
 	exit(1);
 }
 
@@ -80,7 +80,7 @@ void	check_data(char ***data_list)
 	j = 0;
 	if (!data_list)
 	{
-		write(2, "Error\n", 7);
+		write(2, "Error\n", 6);
 		exit(1);
 	}	
 	while (data_list[i])
@@ -106,7 +106,7 @@ void	check_repeat(t_node *stack)
 		{
 			if (temp->data == stack->data)
 			{
-				write(2, "Error\n", 7);
+				write(2, "Error\n", 6);
 				free_stack(&stack);
 				exit(1);
 			}
