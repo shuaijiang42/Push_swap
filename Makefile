@@ -10,7 +10,7 @@ OBJECTS = $(SOURCES:.c=.o)
 LIB = libft/libft.a
 
 CC = gcc
-CFLAGS += -Wextra -Werror -Wall  -I ./libft -g3 -fsanitize=address
+CFLAGS += -Wextra -Werror -Wall  -I ./libft #-g3 -fsanitize=address
  
 all: $(NAME) 
 

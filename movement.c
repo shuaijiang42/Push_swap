@@ -6,7 +6,7 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 17:22:59 by shujiang          #+#    #+#             */
-/*   Updated: 2023/06/24 10:38:03 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/06/24 11:29:30 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,26 +59,6 @@ void	push(t_node **stack1, t_node **stack2, char c)
 
 //Shift down all elements of a stack by 1.
 //The last element becomes the first one.
-/* void    reverse_rotate(t_node **stack, char c)
-{
-	t_node  *last;
-	t_node  *penultimate;
-
-	last = NULL;
-	penultimate = NULL;
-	if (!stack || !*stack)
-		return ;
-	last = ft_lstNode(*stack);
-	penultimate = *stack;
-	while(penultimate->next->next)
-		penultimate = penultimate->next;
-	penultimate->next = NULL;
-	last->next = *stack;
-	*stack = last;
-	ft_printf("rr%c\n", c);
-	
-} */
-
 void	reverse_rotate(t_node **stack, char c)
 {
 	t_node	*last;
