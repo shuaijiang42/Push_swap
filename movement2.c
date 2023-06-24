@@ -6,7 +6,7 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 19:57:40 by shujiang          #+#    #+#             */
-/*   Updated: 2023/06/23 19:58:33 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/06/24 10:38:28 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	rotate_no_print(t_node **stack)
 	temp = NULL;
 	if (!stack || !*stack || !(*stack)->next)
 		return ;
-	last = ft_lstNode(*stack);
+	last = ft_lst_node(*stack);
 	temp = *stack;
 	*stack = (*stack)->next;
 	(*stack)->prev = NULL;

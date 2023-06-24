@@ -6,7 +6,7 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 12:54:10 by shujiang          #+#    #+#             */
-/*   Updated: 2023/06/01 16:35:53 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/06/24 10:49:53 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,5 @@ typedef struct s_strings
 	char	*line;
 }	t_strings;
 char	*get_next_line(int fd);
-int	ft_printf(const char *str, ...);
+int		ft_printf(const char *str, ...);
 #endif

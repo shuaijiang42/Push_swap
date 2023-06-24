@@ -6,7 +6,7 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 17:22:59 by shujiang          #+#    #+#             */
-/*   Updated: 2023/06/23 20:02:41 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/06/24 10:38:03 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	reverse_rotate(t_node **stack, char c)
 	penultimate = NULL;
 	if (!stack || !*stack || !(*stack)->next)
 		return ;
-	last = ft_lstNode(*stack);
+	last = ft_lst_node(*stack);
 	penultimate = last->prev;
 	penultimate->next = NULL;
 	last->prev = NULL;

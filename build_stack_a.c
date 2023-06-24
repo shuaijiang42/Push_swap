@@ -6,7 +6,7 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 13:54:27 by shujiang          #+#    #+#             */
-/*   Updated: 2023/06/23 19:23:38 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/06/24 10:39:38 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ t_node	*input_to_stack(char ***data_list)
 	{
 		while (data_list[i][j])
 		{
-			new = ft_newNode(ft_atoi(data_list[i][j]));
-			ft_nodeAdd_back(&stack, new);
+			new = ft_new_node(ft_atoi(data_list[i][j]));
+			ft_node_add_back(&stack, new);
 			j++;
 		}
 		i++;

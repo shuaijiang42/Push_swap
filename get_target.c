@@ -6,7 +6,7 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 13:05:49 by shujiang          #+#    #+#             */
-/*   Updated: 2023/06/23 19:43:46 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/06/24 10:40:52 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ t_target	*count_steps_back(t_node **stack, t_range *range)
 	int			counter;
 
 	counter = 1;
-	temp = ft_lstNode(*stack);
+	temp = ft_lst_node(*stack);
 	target = (t_target *)malloc(sizeof(t_target));
 	while (temp)
 	{
